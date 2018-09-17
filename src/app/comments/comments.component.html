@@ -1,0 +1,12 @@
+<div class="container panel panel-default">
+  <div class="panel-heading">
+    <h4>Comments:</h4>
+  </div>
+  <div class="post-comments">
+    <div class="row">
+      <ng-container *ngFor="let feed of comments">
+        <app-comment [comment]="feed"></app-comment>
+      </ng-container>
+    </div>
+  </div>
+</div>
