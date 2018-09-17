@@ -1,0 +1,30 @@
+<div class="loader" *ngIf="isLoading"></div>
+
+<div class="panel panel-default" *ngIf="(!isLoading) && feed">
+    <div class="panel-body">
+        <div class="feedWrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="name">{{feed.AuthorDetails.AuthorName}}</span>
+                    <span *ngIf="feed.AuthorDetails.AuthorFlairText"><b> {{feed.AuthorDetails.AuthorFlairText}} </b></span>
+                    <span class="time"> . {{GetRelativeTime(feed.Created)}}</span>
+                    <h3>{{feed.Title}}</h3>
+                    <div [innerHTML]="HtmlDecode(feed.Text)"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 voter-section">
+                    <app-voter [score]="feed.Score"></app-voter>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="(!isLoading) && feed && feed.Replies && feed.Replies.length>0">
+    <app-comments [comments]="feed.Replies"></app-comments>
+</ng-container>
+
+<div class="panel panel-default" *ngIf="(!isLoading) && !feed">
+    <h4>Something went wrong while fetching the data!</h4>
+</div>
