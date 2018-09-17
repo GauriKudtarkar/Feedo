@@ -1,0 +1,41 @@
+.selected{
+    color:blue;
+}
+
+button{
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: initial;
+  }
+
+  button:focus {outline:0;}
+
+  .voteButtonContainer div{
+    left: -3px;
+    position: relative;
+  }
+
+  /* latest */
+  /* .comment-meta {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+  } */
+
+  .vote-wrap button{
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: initial;
+  }
+
+  .vote-wrap .glyphicon{
+    color: #95979e;
+  }
+
+  .vote-wrap button:hover .glyphicon{
+    color:red;
+  }
+.vote-wrap button:focus {outline:0;}
