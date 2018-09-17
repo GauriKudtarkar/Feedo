@@ -1,0 +1,80 @@
+<div class="loader" *ngIf="isLoading"></div>
+
+
+<div class="panel panel-default" *ngIf="(!isLoading) && feedList && feedList.Feeds && feedList.Feeds.length>0">
+    <div class="panel-heading">
+        <div class="media">
+            <div class="float-right">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#" (click)="changePage(false)" [class.adisabled]="!isPreviousEnabled">&larr;
+                            Previous</a>
+                    </li>
+                    <li><select id="soflow" (change)="changeLimit($event.target.value)">
+                            <option value=5>5</option>
+                            <option value=10 selected>10</option>
+                            <option value=25>25</option>
+                        </select></li>
+                    <li class="next">
+                        <a href="#" (click)="changePage(true)" [class.adisabled]="!isNextEnabled">Next &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="feedWrapper" *ngFor="let feed of dataSource">
+            <div class="row">
+                <div class="col-sm-2">
+                    <figure>
+                        <img [src]="feed.Thumbnail.Url" [style.background-size]="cover" class="avatar">
+                        <figcaption>
+                            <p title="score">Score: <b>{{feed.Score}}</b></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-10">
+                    <span class="name">{{feed.AuthorDetails.AuthorName}}</span>
+                    <span *ngIf="feed.AuthorDetails.AuthorFlairText"><b> {{feed.AuthorDetails.AuthorFlairText}} </b></span>
+                    <span class="time"> . {{GetRelativeTime(feed.Created)}}</span>
+                    <h3 class="feed-title">
+                        {{feed.Title}}
+                    </h3>
+                    <p>
+                        <a href (click)="!!FetchFeedDetails(feed.Permalink,feed.UrlForJson)">Permalink...</a>
+                    </p>
+                    <p class="comment-meta">
+                        <a href (click)="!!FetchFeedDetails(feed.Permalink,feed.UrlForJson)">{{feed.Num_comments}}
+                            comments</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <div class="media">
+            <div class="float-right">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#" (click)="changePage(false)" [class.adisabled]="!isPreviousEnabled">&larr;
+                            Previous</a>
+                    </li>
+                    <li><select id="soflow" (change)="changeLimit($event.target.value)">
+                            <option value=5>5</option>
+                            <option value=10 selected>10</option>
+                            <option value=25>25</option>
+                        </select></li>
+                    <li class="next">
+                        <a href="#" (click)="changePage(true)" [class.adisabled]="!isNextEnabled">Next &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" *ngIf="(!isLoading) && !(feedList && feedList.Feeds && feedList.Feeds.length>0)">
+    <h3>
+        No data found!
+    </h3>
+</div>
