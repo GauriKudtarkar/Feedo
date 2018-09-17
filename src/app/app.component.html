@@ -1,0 +1,40 @@
+<header>
+    <div class="wrapper">
+        <div>
+            <img class="header_logo" src="../../assets/logo.svg" alt="Logo">
+        </div>
+        <div class="search-panel">
+            <searchBar [feedList]="feedList"></searchBar>
+        </div>
+    </div>
+</header>
+<div id="content">
+    <div class="wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<footer>
+    <div class="wrapper">
+        Bannerflow - Feedo : Read the feed!
+    </div>
+</footer>
+
+
+
+<!-- 
+<ng-container>
+    <mat-toolbar color="primary">
+        <span>
+            <img src="../../assets/logo.png" width="25%" alt="Logo">Feedo
+        </span>-->
+
+<!-- This fills the remaining space of the current row -->
+<!-- <span class="fill-remaining-space"></span>
+
+        <span>
+            <searchBar></searchBar>
+        </span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+</ng-container> -->
