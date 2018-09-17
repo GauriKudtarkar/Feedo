@@ -1,0 +1,27 @@
+<div class="media">
+  <div class="media-heading">
+    <button class="btn-expand-collapse" (click)="onExpandCollapse()">
+      <div class="expand-collapse">
+        <i class="glyphicon" [class.glyphicon-chevron-down]="isExpanded" [class.glyphicon-chevron-right]="!isExpanded"></i>
+      </div>
+    </button>
+    <span class="name">{{comment.AuthorDetails.AuthorName}}</span>
+    <span *ngIf="comment.AuthorDetails.AuthorFlairText"><b> {{comment.AuthorDetails.AuthorFlairText}} </b></span>
+    <span class="time"> . {{GetRelativeTime(comment.Created)}}</span>
+  </div>
+  <div class="panel-collapse collapse in" [class.panel-open]="isExpanded" [class.panel-close]="!isExpanded">
+    <div class="media-left">
+    </div>
+    <div class="media-body">
+      <div class="div-text" [innerHTML]="HtmlDecode(comment.Text)"></div>
+      <div class="comment-meta">
+        <app-voter [score]="comment.Score"></app-voter>
+      </div>
+      <ng-container *ngIf="comment.Replies && comment.Replies.length>0">
+        <ng-container *ngFor="let reply of comment.Replies">
+          <app-comment [comment]="reply"></app-comment>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
