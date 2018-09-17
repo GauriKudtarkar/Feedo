@@ -1,0 +1,12 @@
+nav{
+    background: #1976d2;
+    color: white;
+}
+
+a.glyphicon-search{
+    position:absolute;
+    z-index:1000;
+    top:30%;
+    right:2%;
+    text-decoration: none !important;
+}
