@@ -1,0 +1,5 @@
+
+<div class="form-group has-feedback">
+    <a href="#" (click)="onKey(13)" class="glyphicon glyphicon-search"></a>
+    <input type="text" class="form-control" placeholder="Search by subredit" [(ngModel)]="subredit" (keyup)="onKey($event.keyCode)" />
+</div>
