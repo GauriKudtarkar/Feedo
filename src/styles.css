@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+/*
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+ */
+ @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+ 
+ * {
+  font-family: sans-serif;
+  color: #3F3E3D;
+}
+ body {    
+  background-color: #e7ebed;
+  margin: 0;
+  padding: 0;
+  height:100%;
+  width:100%
+}
+
+input {
+  width: 236px;
+  height: 38px;
+  border: 1px solid #D2D2D2;
+  padding: 0 10px;
+  outline: none;
+  font-size: 17px;
+}
+
+input:focus{
+  background: #FFFDF2;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+a.antialiased {
+  color: #58B84E;
+  text-shadow:#58B84E 0 0 1px;
+}
+
+.wrapper {
+  width: 860px;
+  margin: auto;
+}
+
+.float-right{
+  float: right!important;
+}
+
+.float-left{
+  float: left;
+}
+
+
+/* for loading  */
+.loader {
+  position: absolute;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  /* background-color: white; */
+  margin-top: 12%;
+  margin-left: 27%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
