@@ -1,0 +1,113 @@
+
+   .media {
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+   .media .media-heading{    
+  position: relative;
+  left: 30px;
+  font-size: 12px;
+  color: grey;
+  }
+
+  .media .media-body{
+    position: relative;
+    /* left: 33px; */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .media-body .div-text{
+    width: 87%;
+    left: 33px;
+  }
+
+   .vote-wrap{
+    position: relative;
+    top: 0px;
+  }
+
+   span.name{
+    font-size: 14px;
+    color: #ae68ef;
+  }
+  
+   span.time{
+    font-size: 12px;
+    color: #CCC;
+  }
+
+   .comment-meta {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+  }
+
+  .vote-wrap button{
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: initial;
+  }
+
+  .vote-wrap .glyphicon{
+    color: #95979e;
+  }
+
+  .vote-wrap button:hover .glyphicon{
+    color:red;
+  }
+  .comment-meta {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+  }
+  .comment-meta a {
+    font-size: 12px;
+    color: #95979e;
+    font-weight: bolder;
+    padding: 5px;
+    cursor: default;
+  }
+.vote-wrap button:focus {outline:0;}
+
+.selected{
+    color:red;
+}
+
+.btn-expand-collapse{
+  background: #649dd8;
+  border-radius: 3px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: initial;
+  width: 15px;
+  padding: -2px;
+  box-shadow: -2px 2px #847979;
+  border: 1px solid #7d7de6;
+  left: -12px;
+    top: -2px;
+    position: relative;
+}
+
+.btn-expand-collapse .glyphicon{
+  position: relative;
+    top: 3px;
+    left: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.panel-open{
+
+  display: block;
+}
+
+.panel-close{
+  display: none;
+}
